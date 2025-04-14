@@ -47,16 +47,43 @@ For support and further inquiries, please connect via Telegram: 📞 [vvizardev]
 
 ## My Transaction 
 
-[ WSOL -> WSOL ](https://solscan.io/tx/4SWQPhWbzAPyCgwk5g7frohM6FfeffgUg3occX2zzhCLpQuDxzmhEgb4dNiT914NfRT4JTYjq9n5aViAs3iwb9PU)
+- [WSOL -> WSOL](https://solscan.io/tx/4SWQPhWbzAPyCgwk5g7frohM6FfeffgUg3occX2zzhCLpQuDxzmhEgb4dNiT914NfRT4JTYjq9n5aViAs3iwb9PU)
 
 ![image](https://github.com/user-attachments/assets/b97e460d-9f33-4b79-99f3-969fc3c7e9e3)
 
 ## 🛠️ Advanced Upgrades: Smarter, Faster Arbitrage
-### 🚀 Custom Routing
-Take full control with Smart Contract-based Custom Arbitrage Routing — beyond default Jupiter paths. Fine-tune your strategies with precision and speed.
+### 🛠️ Self-Hosted Routing
+Run your own Jupiter routing engine locally or on your backend for full control:
+
+- 🔁 Customize pathfinding logic
+
+- ✅ Whitelist preferred DEXes or LPs
+
+- ⛔ Exclude low-liquidity or risky tokens
+
+- 🧠 Simulate arbitrage cycles before submitting on-chain
+
+- 🚀 Optimize profit targeting, latency, and fallback logic
+
+```
+No rate limits, no external dependencies — you're in full control.
+```
+
+### ⚡ Powered by QuickNode (RPC + WebSockets)
+Supercharge your bot with QuickNode’s premium Solana RPC and WebSocket infrastructure:
+
+- 📡 Low-latency RPC calls – Fast route fetching, transaction building, and confirmation
+
+- 📥 Real-time Account/Slot/Block Subscriptions – Stay in sync with market events as they happen
+
+- 🧭 Better uptime & rate limits – Compared to public RPCs, QuickNode ensures consistent performance
+
+- 🕵️‍♂️ Monitor token price movement and liquidity changes instantly via WebSocket
 
 ### 🧠 Enhanced Arbitrage Logic
 Introducing the Upgraded Jupiter Arbitrage Bot — now with smart contract logic and dynamic route optimization.
+
+![image](https://github.com/user-attachments/assets/6692ceaa-af11-458a-ba8c-c4f819435364)
 
 - Custom Route Construction
 
@@ -75,9 +102,12 @@ Solana has multiple transaction confirmation gateways, including:
 ### Instead of waiting for one, we race them all.
 
 🏁 How It Works
-1️⃣ Simultaneously broadcast the same transaction to all supported gateways.
-2️⃣ Whichever confirms first wins, locking in the profit.
-3️⃣ Remaining transactions are auto-failed or canceled to prevent duplicates or slippage.
+
+- 1️⃣ Simultaneously broadcast the same transaction to all supported gateways.
+
+- 2️⃣ Whichever confirms first wins, locking in the profit.
+
+- 3️⃣ Remaining transactions are auto-failed or canceled to prevent duplicates or slippage.
 
 ✅ Why Racing?
 
