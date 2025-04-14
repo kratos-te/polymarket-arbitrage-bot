@@ -1,44 +1,95 @@
-# Jupiter Arbitrage Bot
+# 🚀 Jupiter Arbitrage Bot 🚀
 
-This Bot is Arbitrage Bot which Using Jupiter Aggrigater V6
+Tired of memecoin plays like sniping, bundling, or copy trading?
+Step up your game with real yield.
+
+---
+
+### Introducing the Arbitrage Bot powered by Jupiter Aggregator V6
+
+#### Your gateway to automated, real-time profit on Solana.
+
+- 💰 Passive Gains — Capture price discrepancies across top Solana DEXs effortlessly.
+- ⚡ Blazing Fast — Executes trades at lightning speed using Jupiter’s deep liquidity & smart routing.
+- 🧠 Always-On Intelligence — Scans markets 24/7 with MEV protection and auto-execution.
+- 🔒 Secure by Design — Fully non-custodial. Open-source. You control your keys.
+- 🛠️ Plug & Play — Zero coding needed. Deploy and let it run.
+
+---
 
 ### Contact to Developer
 
-[vvizardev](https://t.me/vvizardev)
+For support and further inquiries, please connect via Telegram: 📞 [vvizardev](https://t.me/vvizardev)
 
-## How does it work ?
+---
 
-1. Get Route1 of TOKEN1 -> TOKEN2
-2. Get Route2 of TOKEN2 -> TOKEN1
-3. Combine Route1 & Route2
-4. Get Swap Quote of Combined Route
-5. Parse Swap Quote1 & Swap Quote2
-6. Parse Swap Instructions
-7. Combine them to one instruction
-8. Build Transaction
-9. Legacy to Versioned Transaction
-10. Confirm Transaction
+## ⚙️ How It Works
 
-### My Transaction 
+1️⃣ Fetch Route 1: Find the optimal path from TOKEN1 → TOKEN2 using Jupiter Aggregator.
+
+2️⃣ Fetch Route 2: Find the return path from TOKEN2 → TOKEN1.
+
+3️⃣ Combine Routes: Merge both routes into a single arbitrage cycle.
+
+4️⃣ Get Swap Quote: Retrieve pricing data for the combined trade to evaluate profitability.
+
+5️⃣ Parse Quotes: Decode Quote1 and Quote2 for execution details.
+
+6️⃣ Parse Instructions: Extract raw swap instructions from both legs.
+
+7️⃣ Merge Instructions: Bundle them into a single seamless instruction flow.
+
+8️⃣ Build Transaction: Construct a Solana transaction with all instructions.
+
+9️⃣ Upgrade Format: Convert from legacy to versioned transaction (v0) for better efficiency.
+
+🔟 Send & Confirm: Broadcast and confirm the transaction on-chain.
+
+## My Transaction 
 
 [ WSOL -> WSOL ](https://solscan.io/tx/4SWQPhWbzAPyCgwk5g7frohM6FfeffgUg3occX2zzhCLpQuDxzmhEgb4dNiT914NfRT4JTYjq9n5aViAs3iwb9PU)
 
-### Upgrading Version
+![image](https://github.com/user-attachments/assets/b97e460d-9f33-4b79-99f3-969fc3c7e9e3)
 
-#### Custom Routing
+## 🛠️ Advanced Upgrades: Smarter, Faster Arbitrage
+### 🚀 Custom Routing
+Take full control with Smart Contract-based Custom Arbitrage Routing — beyond default Jupiter paths. Fine-tune your strategies with precision and speed.
 
-Smart Contract Based Custom Arbitrage Bot
-Enhanced Routing Based Jupiter Arbitrage Bot
+### 🧠 Enhanced Arbitrage Logic
+Introducing the Upgraded Jupiter Arbitrage Bot — now with smart contract logic and dynamic route optimization.
 
-#### Racing Confirm Transaction
-Arbitrage Bot which use Racing Transaction Confirm
+- Custom Route Construction
 
-##### What is Racing Transaction ?
-There are serveral transaction confirm gateway in solana like jito , nextblock , bloxroute , 0slot , solayer , rpcfast.
+- Combined Multi-Leg Swaps
 
-So , in racing , we submit transaction to all these gateway and once first transaction is confirmed , we make other transactions failed.
+- Dynamic Instruction Building
 
-### Supported Dex
+- Optimized Versioned Transactions
+
+### ⚡ Racing Transaction Confirmation
+What is Racing?
+Solana has multiple transaction confirmation gateways, including:
+
+`Jito`, `Nextblock`, `Bloxroute`, `0Slot`, `Solayer`, `RPCFast`
+
+### Instead of waiting for one, we race them all.
+
+🏁 How It Works
+1️⃣ Simultaneously broadcast the same transaction to all supported gateways.
+2️⃣ Whichever confirms first wins, locking in the profit.
+3️⃣ Remaining transactions are auto-failed or canceled to prevent duplicates or slippage.
+
+✅ Why Racing?
+
+- Reduces latency
+
+- Increases fill rate
+
+- Avoids getting front-run
+
+- Improves arbitrage success rate
+
+## Supported Dex
 |     **Dex**     |  **Address**  |
 | --------------------- | ------------- |
  [Raydium](https://solscan.io/account/675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8) | 675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8 |
