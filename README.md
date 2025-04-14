@@ -23,6 +23,21 @@ This Bot is Arbitrage Bot which Using Jupiter Aggrigater V6
 
 [ WSOL -> WSOL ](https://solscan.io/tx/4SWQPhWbzAPyCgwk5g7frohM6FfeffgUg3occX2zzhCLpQuDxzmhEgb4dNiT914NfRT4JTYjq9n5aViAs3iwb9PU)
 
+### Upgrading Version
+
+#### Custom Routing
+
+Smart Contract Based Custom Arbitrage Bot
+Enhanced Routing Based Jupiter Arbitrage Bot
+
+#### Racing Confirm Transaction
+Arbitrage Bot which use Racing Transaction Confirm
+
+##### What is Racing Transaction ?
+There are serveral transaction confirm gateway in solana like jito , nextblock , bloxroute , 0slot , solayer , rpcfast.
+
+So , in racing , we submit transaction to all these gateway and once first transaction is confirmed , we make other transactions failed.
+
 ### Supported Dex
 |     **Dex**     |  **Address**  |
 | --------------------- | ------------- |
