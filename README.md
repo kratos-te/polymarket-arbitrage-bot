@@ -1,6 +1,6 @@
-# 🚀 Jupiter Arbitrage Bot 🚀
+# 🚀 Jupiter Arbitrage Bot v1🚀
 
-Tired of memecoin plays like sniping, bundling, or copy trading?
+Tired of memecoin plays like sniping, bundling, or copy trading ?
 Step up your game with real yield.
 
 ---
