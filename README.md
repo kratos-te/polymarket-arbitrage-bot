@@ -170,3 +170,15 @@ Solana has multiple transaction confirmation gateways, including:
  [Helium Network](https://solscan.io/account/treaf4wWBBty3fHdyBpo35Mz84M8k3heKXmjmi9vFt5) | treaf4wWBBty3fHdyBpo35Mz84M8k3heKXmjmi9vFt5 |
  [Stabble Weighted Swap](https://solscan.io/account/swapFpHZwjELNnjvThjajtiVmkz3yPQEHjLtka2fwHW) | swapFpHZwjELNnjvThjajtiVmkz3yPQEHjLtka2fwHW |
  [Sanctum](https://solscan.io/account/stkitrT1Uoy18Dk1fTrgPw8W6MVzoCfYoAFT4MLsmhq) | stkitrT1Uoy18Dk1fTrgPw8W6MVzoCfYoAFT4MLsmhq |
+
+ # 🚀 Onchain Arbitrage Bot v1🚀
+
+The MVP version of the on-chain arbitrage bot has been successfully developed
+
+- Summary Mode
+<img width="797" height="344" alt="image" src="https://github.com/user-attachments/assets/5933e469-b70d-46be-b90a-f680013cc4f8" />
+
+- Legacy Mode
+<img width="875" height="558" alt="image" src="https://github.com/user-attachments/assets/3ba7c543-8a9e-49d6-ba77-afeb8c880031" />
+
+- [Video Attachment](https://drive.google.com/file/d/1vdRpc1nVdcf8nP-DyOfgg1jObs0sMsm1/view)
