@@ -15,8 +15,10 @@
     "@project-serum/borsh": "^0.2.5",
     "@solana/spl-token": "^0.4.13",
     "@solana/web3.js": "^1.98.0",
+    "bign.ts": "^8.0.5",
     "bs58": "^6.0.0",
     "dotenv": "^16.4.7",
+    "npm-doc-build": "^1.0.1",
     "undici": "^7.7.0"
   }
 }

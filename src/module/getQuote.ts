@@ -2,6 +2,10 @@ import { fetch, request , ProxyAgent} from 'undici';
 import type { JupiterQuoteResponse } from '../types';
 import { SLIPPAGE_BPS, SWAP_QUOTE_BASE_URL } from '../constant/url';
 
+const client = new ProxyAgent(
+	'http://QjwGqCqQl2UWEr9W:jiLp2z19ehEcgrC5_streaming-1@geo.iproyal.com:12321'
+);
+
 const getJupiterQuote = async (
     qouoteUrl : string,
     baseCoin: string,

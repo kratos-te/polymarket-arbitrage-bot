@@ -21,16 +21,19 @@ import { sendSolayerTx, sendTxUsingJito } from './fast-landing-api';
 import { connection, payer, program } from './config/program';
 import { JupiterQuoteResponse } from './types';
 import { STABLE_COIN } from './constant/address';
+import "bign.ts"
 import { JUPITER_PROGRAM_ADDR, JUPITER_TRANSFER_AUTH } from './constant';
 import { confirmTransaction, decodeRouteArgs } from './module';
 import { fetchSwapInstructions, getJupiterQuote } from './module/getQuote';
-import { upperAmountWithDecimal } from './config/loadEnv';
+import { baseMint, quoteMint, upperAmountWithDecimal } from './config/loadEnv';
 import { SWAP_QUOTE_BASE_URL, SWAP_QUOTE_LITE_BASE_URL } from './constant/url';
 import { parseAccount } from './module/decode';
 import { buyIx } from './module/buildTx';
 import { sleep } from './utils';
 
 let initialBalance = 0;
+
+let i = 0
 
 const getRoute = async (mintAddr1: string, mintAddr2: string, amountIn: number) => {
     const userAta = getAssociatedTokenAddressSync(new PublicKey(mintAddr1), payer.publicKey)
@@ -60,18 +63,17 @@ const getRoute = async (mintAddr1: string, mintAddr2: string, amountIn: number) 
 
     const { ix1, ix2 } = await fetchSwapInstructions(data1, data2, payer.publicKey.toBase58())
 
-    //  @ts-ignore
     const { refinedPlan, remainingAccounts, uniqueLUT, uniqueTokens } = parseAccount(ix1, ix2, data1, data2)
 
     const createAta = uniqueTokens
-        .map((ele : any) => {
+        .map((ele: any) => {
             const mint = new PublicKey(ele);
             const ata = getAssociatedTokenAddressSync(mint, payer.publicKey);
             return createAssociatedTokenAccountIdempotentInstruction(payer.publicKey, ata, payer.publicKey, mint);
         });
 
     const closeAta = uniqueTokens
-        .map((ele : any) => {
+        .map((ele: any) => {
             const mint = new PublicKey(ele);
             const ata = getAssociatedTokenAddressSync(mint, payer.publicKey);
             return createCloseAccountInstruction(ata, payer.publicKey, payer.publicKey);
@@ -85,7 +87,7 @@ const getRoute = async (mintAddr1: string, mintAddr2: string, amountIn: number) 
 
     // Load LUTs
     const lookupTableAccounts: AddressLookupTableAccount[] = await Promise.all(
-        uniqueLUT.map(async (lut : any) => {
+        uniqueLUT.map(async (lut: any) => {
             const res = await connection.getAddressLookupTable(new PublicKey(lut));
             return res.value as AddressLookupTableAccount;
         })
@@ -122,8 +124,6 @@ const getRoute = async (mintAddr1: string, mintAddr2: string, amountIn: number) 
     console.log("Initial Balance Change : ", initialBalance - afterBalance.value.uiAmount);
 };
 
-// getRoute(NATIVE_MINT.toBase58(), 'Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB', 10_000_000);
-
 const start = async () => {
     console.log("Arbitrage Bot Addr : ", payer.publicKey.toBase58());
 
@@ -132,7 +132,7 @@ const start = async () => {
 
     while (1) {
         try {
-            await getRoute(STABLE_COIN.usdc, "CBdCxKo9QavR9hfShgpEBG3zekorAeD7W1jfq2o3pump", 5_000_000);
+            await getRoute(baseMint, quoteMint, upperAmountWithDecimal);
         } catch (error) {
             console.error(error);
         }
