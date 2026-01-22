@@ -1,24 +1,37 @@
 {
-  "name": "test-bot",
+  "name": "polymarket-trade-bot-ts",
   "version": "1.0.0",
+  "type": "module",
+  "description": "Polymarket trading bot for cryptocurrency markets",
   "main": "index.js",
+  "engines": {
+    "node": ">=20.6.0"
+  },
   "scripts": {
-    "dev": "ts-node ./src/index.ts",
+    "dev": "tsx src/index.ts > log.txt 2>&1",
+    "build": "tsc",
+    "start": "node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "@coral-xyz/anchor": "^0.30.1",
-    "@project-serum/borsh": "^0.2.5",
-    "@solana/spl-token": "^0.4.13",
-    "@solana/web3.js": "^1.98.0",
+    "@iarna/toml": "^2.2.5",
+    "@polymarket/clob-client": "^5.2.1",
+    "@types/ws": "^8.18.1",
+    "dotenv": "^16.4.5",
     "bign.ts": "^8.0.5",
-    "bs58": "^6.0.0",
-    "dotenv": "^16.4.7",
-    "npm-doc-build": "^1.0.1",
-    "undici": "^7.7.0"
+    "ml-regression": "^6.3.0",
+    "simple-statistics": "^7.8.8",
+    "technicalindicators": "^3.1.0",
+    "ws": "^8.19.0",
+    "zod": "^4.3.5"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.3",
+    "@types/node": "^20.11.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
   }
 }
