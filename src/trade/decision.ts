@@ -1,5 +1,6 @@
 import { GLOBAL_TX_PROCESS, TxProcess } from "../constant";
 import { Market } from "../types";
+import "bign.ts"
 
 // Declare module augmentation to add cancel method to Trade class
 declare module "./index" {

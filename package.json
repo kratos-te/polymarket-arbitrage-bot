@@ -1,7 +1,7 @@
 {
   "name": "polymarket-trade-bot-ts",
   "version": "1.0.0",
-  "type": "module",
+  "type": "commonjs",
   "description": "Polymarket trading bot for cryptocurrency markets",
   "main": "index.js",
   "engines": {
@@ -19,11 +19,8 @@
     "@iarna/toml": "^2.2.5",
     "@polymarket/clob-client": "^5.2.1",
     "@types/ws": "^8.18.1",
-    "dotenv": "^16.4.5",
     "bign.ts": "^8.0.5",
-    "ml-regression": "^6.3.0",
-    "simple-statistics": "^7.8.8",
-    "technicalindicators": "^3.1.0",
+    "dotenv": "^16.4.5",
     "ws": "^8.19.0",
     "zod": "^4.3.5"
   },

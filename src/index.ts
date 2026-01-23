@@ -1,7 +1,6 @@
 import { ClobClient, Side } from "@polymarket/clob-client";
 import { generateMarketSlug } from "./config";
 import type { Coin, MarketConfig, Minutes } from "./types";
-import "bign.ts";
 import { CHAIN_ID, FUNDER, getEvent, getMarket, getPrices, HOST, SIGNATURE_TYPE, SIGNER } from "./services";
 import { getCurrentTime } from "./utils";
 import { loadConfig } from "./config/toml";
