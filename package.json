@@ -8,7 +8,7 @@
     "node": ">=20.6.0"
   },
   "scripts": {
-    "dev": "tsx src/index.ts > log.txt 2>&1",
+    "dev": "tsx src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
