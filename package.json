@@ -18,9 +18,11 @@
   "dependencies": {
     "@iarna/toml": "^2.2.5",
     "@polymarket/clob-client": "^5.2.1",
+    "@tensorflow/tfjs": "^4.22.0",
     "@types/ws": "^8.18.1",
-    "bign.ts": "^8.0.5",
+    "ccxt": "^4.5.36",
     "dotenv": "^16.4.5",
+    "ml-regression": "^6.3.0",
     "ws": "^8.19.0",
     "zod": "^4.3.5"
   },

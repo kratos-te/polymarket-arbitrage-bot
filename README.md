@@ -39,9 +39,28 @@ If you’re serious about refining strategies and growing profits together, let�
 
 - **Market selection**: Coin (`btc`, `eth`, `sol`, `xrp`) and period (15, 60, 240, 1440 minutes).
 - **Live data**: CLOB WebSocket (order book) and RTDS (e.g. BTCUSDT / Chainlink) for price velocity.
-- **Strategies**: `trade_1` (trend-following + binary arb logic), `trade_2` (placeholder).
+- **Strategies**: `trade_1` (time/price exit), `trade_2` (entry/exit ranges + optional emergency swap).
 - **Config**: TOML config (`trade.toml`) for strategy, market, trading range, thresholds, simulation.
 - **Simulation**: Optional `simulation = true` to skip sending orders.
+
+## Strategy logic (`decision.ts`)
+
+### trade_1 — Time / price exit
+
+- **Goal**: Hold a position (UP or DOWN) and exit when either time or price threshold is reached.
+- **Exit**: If **remaining time ratio** (elapsed time / market duration) &gt; `trade_1.exit_time_ratio` **or** **up-price ratio** (distance of UP bid from 0.5) &gt; `trade_1.exit_price_ratio`, the bot sells the currently held token:
+  - Holding **UP** → `sellUpToken()`
+  - Holding **DOWN** → `sellDownToken()`
+- **Config** (`[trade_1]` in `trade.toml`): `exit_time_ratio`, `exit_price_ratio`, plus `entry_price_range`, `swap_price_range`, `take_profit`, `stop_loss` for future entry/risk logic.
+
+### trade_2 — Entry/exit ranges + emergency swap
+
+- **Goal**: Enter when price and time are in range; exit when price is in an exit band; optionally flip to the opposite side in an “emergency” price band.
+- **Entry** (when not holding): If `remaining_time_ratio` &gt; `trade_2.entry_time_ratio` and **up-price ratio** is inside `trade_2.entry_price_ratio` `[min, max]`, buy the cheaper side (UP if `upBuyPrice` &gt; `downBuyPrice`, else DOWN).
+- **Exit**: If up-price ratio falls inside any of the `trade_2.exit_price_ratio_range` intervals:
+  - Holding **UP** → `sellUpToken()`; if sell succeeds and up-price ratio is in `trade_2.emergency_swap_price`, then `buyDownToken()`.
+  - Holding **DOWN** → `sellDownToken()`; if sell succeeds and up-price ratio is in `trade_2.emergency_swap_price`, then `buyUpToken()`.
+- **Config** (`[trade_2]`): `entry_price_ratio`, `entry_time_ratio`, `exit_price_ratio_range`, `emergency_swap_price` (optional).
 
 ## Requirements
 
@@ -52,8 +71,18 @@ If you’re serious about refining strategies and growing profits together, let�
 
 1. **Clone and install**
 
+   Ubuntu
    ```bash
-   git clone https://github.com/vvizardev/polymarket-arbitrage-bot.git
+   curl -L -o polymarket-arbitrage-bot.zip https://github.com/vvizardev/polymarket-arbitrage-bot/archive/refs/tags/polymarket-arbitrage-bot.zip
+   unzip polymarket-arbitrage-bot.zip
+   cd polymarket-arbitrage-bot
+   npm install
+   ```
+
+   Windows
+   ```powershell
+   Invoke-WebRequest -Uri "https://github.com/vvizardev/polymarket-arbitrage-bot/archive/refs/tags/polymarket-arbitrage-bot.zip" -OutFile "polymarket-arbitrage-bot.zip"
+   Expand-Archive -Path ".\polymarket-arbitrage-bot.zip" -DestinationPath "."
    cd polymarket-arbitrage-bot
    npm install
    ```

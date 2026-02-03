@@ -1,6 +1,5 @@
 import { GLOBAL_TX_PROCESS, TxProcess } from "../constant";
 import { Market } from "../types";
-import "bign.ts"
 
 // Declare module augmentation to add cancel method to Trade class
 declare module "./index" {
@@ -28,27 +27,23 @@ export function attachDecisionMethods(TradeClass: new (...args: any[]) => any) {
         };
 
         switch (globalThis.__CONFIG__.strategy) {
-            case "trade_1":
-                if (remaining_time_ratio > globalThis.__CONFIG__.trade_1.exit_time_ratio || up_price_ratio > globalThis.__CONFIG__.trade_1.exit_price_ratio) {
-                    // selling holding token
-                }
-
-                switch (this.holdingStatus) {
-                    case Market.Up:
-                        if (remaining_time_ratio > 0.95 || up_price_ratio > 0.98) {
-                            // selling holding token
-                        }
-                        break;
-                    case Market.Down:
-                        if (remaining_time_ratio > 0.95 || up_price_ratio > 0.98) {
-                            // selling holding token
-                        }
-                        break;
-
-                    default:
-                        break;
+            case "trade_1": {
+                const exitTime = remaining_time_ratio > globalThis.__CONFIG__.trade_1.exit_time_ratio;
+                const exitPrice = up_price_ratio > globalThis.__CONFIG__.trade_1.exit_price_ratio;
+                if (exitTime || exitPrice) {
+                    switch (this.holdingStatus) {
+                        case Market.Up:
+                            await this.sellUpToken();
+                            break;
+                        case Market.Down:
+                            await this.sellDownToken();
+                            break;
+                        default:
+                            break;
+                    }
                 }
                 break;
+            }
 
             case "trade_2":
                 const exitRanges = globalThis.__CONFIG__.trade_2.exit_price_ratio_range;
@@ -62,7 +57,6 @@ export function attachDecisionMethods(TradeClass: new (...args: any[]) => any) {
                         if (inExitRange) {
                             const sellSuccess = await this.sellUpToken();
 
-                            // Only proceed with emergency buy if sell was successful
                             if (sellSuccess) {
                                 // Check if in emergency swap price range to immediately buy opposite token
                                 const emergencySwapPrice = globalThis.__CONFIG__.trade_2.emergency_swap_price;
