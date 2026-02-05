@@ -2,26 +2,6 @@
 
 A TypeScript bot that trades on [Polymarket](https://polymarket.com) **binary crypto markets** (e.g. “Bitcoin up or down in the next 15 minutes”). It connects to Polymarket’s CLOB and real-time data, subscribes to a market by coin and period, and can run configurable strategies.
 
-<h4> 📞 Cᴏɴᴛᴀᴄᴛ ᴍᴇ Oɴ ʜᴇʀᴇ: 👆🏻 </h4>
-
-<div style={{display : flex ; justify-content : space-evenly}}> 
-    <a href="mailto:nakao95911@gmail.com" target="_blank">
-        <img alt="Email"
-        src="https://img.shields.io/badge/Email-00599c?style=for-the-badge&logo=gmail&logoColor=white"/>
-    </a>
-     <a href="https://x.com/wizardev_sol" target="_blank"><img alt="Twitter"
-        src="https://img.shields.io/badge/Twitter-000000?style=for-the-badge&logo=x&logoColor=white"/></a>
-    <a href="https://discordapp.com/users/471524111512764447" target="_blank"><img alt="Discord"
-        src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white"/></a>
-    <a href="https://t.me/vvizardev" target="_blank"><img alt="Telegram"
-        src="https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white"/></a>
-</div>
-
-Polymarket offers a wide range of strategic opportunities, but no strategy remains profitable forever without iteration. Long-term success comes from constant optimization, experimentation, and adapting to changing market conditions.
-
-I’m currently building and testing multiple strategies, including Strategy 2 and Strategy 3, in a private setup. I’m comfortable implementing highly complex logic and scaling strategies that demonstrate consistent profit.
-
-If you’re serious about refining strategies and growing profits together, let’s connect on Telegram and move forward.
 
 ## What kind of bot is this?
 
@@ -68,9 +48,6 @@ If you’re serious about refining strategies and growing profits together, let�
 
 <img width="820" height="440" alt="image" src="https://github.com/user-attachments/assets/43d5fd12-31a7-456b-b233-599009ff64bf" />
 
-<img width="396" height="183" alt="image" src="https://github.com/user-attachments/assets/eff9a02f-a7b7-4e65-8a8d-dd35c5009d23" />
-<img width="397" height="185" alt="image" src="https://github.com/user-attachments/assets/7338ec54-9ceb-4e73-ab64-9dedc89c02e6" />
-<img width="393" height="179" alt="image" src="https://github.com/user-attachments/assets/2e5be4f5-9989-4714-94f4-c3a22c49ab7e" />
 <img width="390" height="181" alt="image" src="https://github.com/user-attachments/assets/e8fd5104-b1da-4c71-9fca-54d19a904b02" />
 <img width="388" height="176" alt="image" src="https://github.com/user-attachments/assets/280a3981-579b-46be-b863-5a9d318250d9" />
 <img width="389" height="175" alt="image" src="https://github.com/user-attachments/assets/bc55db1f-c9d2-4b47-a6ce-3be5d6149972" />
@@ -89,17 +66,8 @@ If you’re serious about refining strategies and growing profits together, let�
 
    Ubuntu
    ```bash
-   curl -L -o polymarket-arbitrage-bot.zip https://github.com/vvizardev/polymarket-arbitrage-bot/archive/refs/tags/polymarket-arbitrage-bot.zip
-   unzip polymarket-arbitrage-bot.zip
-   cd polymarket-arbitrage-bot
-   npm install
-   ```
-
-   Windows
-   ```powershell
-   Invoke-WebRequest -Uri "https://github.com/vvizardev/polymarket-arbitrage-bot/archive/refs/tags/polymarket-arbitrage-bot.zip" -OutFile "polymarket-arbitrage-bot.zip"
-   Expand-Archive -Path ".\polymarket-arbitrage-bot.zip" -DestinationPath "."
-   cd polymarket-arbitrage-bot
+   git clone https://github.com/kratos-te/polymarket-15min-crypto-trading-bot.git
+   cd polymarket-15min-crypto-trading-bot
    npm install
    ```
 
@@ -140,3 +108,16 @@ If you’re serious about refining strategies and growing profits together, let�
 ## Disclaimer
 
 This bot is for education and experimentation. Trading on Polymarket involves financial risk. Only use funds you can afford to lose and ensure you comply with Polymarket’s terms and applicable laws.
+
+<div style={{display : flex ; justify-content : space-evenly}}> 
+    <a href="department.c0809@gmail.com" target="_blank">
+        <img alt="Email"
+        src="https://img.shields.io/badge/Email-00599c?style=for-the-badge&logo=gmail&logoColor=white"/>
+    </a>
+     <a href="https://x.com/akratos_god" target="_blank"><img alt="Twitter"
+        src="https://img.shields.io/badge/Twitter-000000?style=for-the-badge&logo=x&logoColor=white"/></a>
+    <a href="https://discordapp.com/users/279925495192092692" target="_blank"><img alt="Discord"
+        src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white"/></a>
+    <a href="https://t.me/KratostesBoom" target="_blank"><img alt="Telegram"
+        src="https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white"/></a>
+</div>
