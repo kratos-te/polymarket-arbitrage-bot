@@ -62,6 +62,22 @@ If you’re serious about refining strategies and growing profits together, let�
   - Holding **DOWN** → `sellDownToken()`; if sell succeeds and up-price ratio is in `trade_2.emergency_swap_price`, then `buyUpToken()`.
 - **Config** (`[trade_2]`): `entry_price_ratio`, `entry_time_ratio`, `exit_price_ratio_range`, `emergency_swap_price` (optional).
 
+### trade_3 — Arbitrage Strategy ( Private )
+
+<img width="633" height="778" alt="image" src="https://github.com/user-attachments/assets/e505340a-ca97-4b95-86a4-845280012ae5" />
+
+<img width="820" height="440" alt="image" src="https://github.com/user-attachments/assets/43d5fd12-31a7-456b-b233-599009ff64bf" />
+
+<img width="396" height="183" alt="image" src="https://github.com/user-attachments/assets/eff9a02f-a7b7-4e65-8a8d-dd35c5009d23" />
+<img width="397" height="185" alt="image" src="https://github.com/user-attachments/assets/7338ec54-9ceb-4e73-ab64-9dedc89c02e6" />
+<img width="393" height="179" alt="image" src="https://github.com/user-attachments/assets/2e5be4f5-9989-4714-94f4-c3a22c49ab7e" />
+<img width="390" height="181" alt="image" src="https://github.com/user-attachments/assets/e8fd5104-b1da-4c71-9fca-54d19a904b02" />
+<img width="388" height="176" alt="image" src="https://github.com/user-attachments/assets/280a3981-579b-46be-b863-5a9d318250d9" />
+<img width="389" height="175" alt="image" src="https://github.com/user-attachments/assets/bc55db1f-c9d2-4b47-a6ce-3be5d6149972" />
+<img width="392" height="176" alt="image" src="https://github.com/user-attachments/assets/787b27f7-8502-464c-86e8-133397a4eaca" />
+
+
+
 ## Requirements
 
 - **Node.js** ≥ 20.6.0
