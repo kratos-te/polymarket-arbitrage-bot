@@ -64,7 +64,7 @@ If you’re serious about refining strategies and growing profits together, let�
 
 ### trade_3 — Arbitrage Strategy ( Private )
 
-<img width="633" height="778" alt="image" src="https://github.com/user-attachments/assets/e505340a-ca97-4b95-86a4-845280012ae5" />
+<img width="623" height="685" alt="image" src="https://github.com/user-attachments/assets/5efba7e5-64ef-4d09-b6f0-229446ceff2a" />
 
 <img width="820" height="440" alt="image" src="https://github.com/user-attachments/assets/43d5fd12-31a7-456b-b233-599009ff64bf" />
 
