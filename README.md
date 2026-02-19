@@ -73,8 +73,8 @@ A Polymarket arbitrage bot that trades on [Polymarket](https://polymarket.com) *
 
    Ubuntu
    ```bash
-   git clone https://github.com/kratos-te/polymarket-15min-crypto-trading-bot.git
-   cd polymarket-15min-crypto-trading-bot
+   git clone https://github.com/kratos-te/polymarket-arbitrage-bot
+   cd polymarket-arbitrage-bot
    npm install
    ```
 
