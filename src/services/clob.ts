@@ -1,4 +1,3 @@
-import { ApiKeyCreds, ClobClient, Side } from "@polymarket/clob-client";
 import { Wallet } from "ethers";
 import { POLYMARKET_PRIVATE_KEY, PROXY_WALLET_ADDRESS } from "../config";
 

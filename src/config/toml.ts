@@ -8,7 +8,7 @@ const ConfigSchema = z.object({
   max_retries: z.number().default(3),
   market: z.object({
     market_coin: z.enum(["btc", "eth", "sol", "xrp"]),
-    market_period: z.enum(["15", "60", "240", "1440"]),
+    market_period: z.enum(["5", "15", "60", "240", "1440"]),
   }),
   trade_1: z.object({
     entry_price_range: z.tuple([z.number(), z.number()]),

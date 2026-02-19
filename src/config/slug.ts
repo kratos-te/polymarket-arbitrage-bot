@@ -11,6 +11,18 @@ export interface TimeBucket {
 /**
  * 15-minute bucket - simple interval rounding
  */
+export function crypto5mBucket(): TimeBucket {
+  const INTERVAL_SECS = 5 * 60; // 300 seconds
+
+  const now = Math.floor(Date.now() / 1000);
+  const start = Math.floor(now / INTERVAL_SECS) * INTERVAL_SECS;
+  const end = start + INTERVAL_SECS;
+
+  return {
+    slug: start.toString(),
+    endTimestamp: end,
+  };
+}
 export function crypto15mBucket(): TimeBucket {
   const INTERVAL_SECS = 15 * 60; // 900 seconds
 
@@ -137,6 +149,7 @@ export function generateMarketSlug(coin: string, minutes: number): TimeBucket {
     switch (coin) {
       case "btc":
         switch (minutes) {
+          case 5: return "btc-updown-5m";
           case 15: return "btc-updown-15m";
           case 60: return "bitcoin-up-or-down";
           case 240: return "btc-updown-4h";
@@ -174,6 +187,7 @@ export function generateMarketSlug(coin: string, minutes: number): TimeBucket {
 
   const bucket = (() => {
     switch (minutes) {
+      case 5: return crypto5mBucket();
       case 15: return crypto15mBucket();
       case 60: return crypto1hrBucket();
       case 240: return crypto4hBucket();

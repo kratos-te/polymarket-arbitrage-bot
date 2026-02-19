@@ -1,6 +1,6 @@
-# Polymarket Arbitrage Trade Bot (TypeScript)
+# Polymarket Arbitrage && CopyTrade Bot (TypeScript) 
 
-A TypeScript bot that trades on [Polymarket](https://polymarket.com) **binary crypto markets** (e.g. “Bitcoin up or down in the next 15 minutes”). It connects to Polymarket’s CLOB and real-time data, subscribes to a market by coin and period, and can run configurable strategies.
+A Polymarket arbitrage bot that trades on [Polymarket](https://polymarket.com) **binary crypto markets** (e.g. “Bitcoin up or down in the next 15 minutes”). It connects to Polymarket’s CLOB and real-time data, subscribes to a market by coin and period, and can run configurable strategies.
 
 
 ## What kind of bot is this?
@@ -22,6 +22,13 @@ A TypeScript bot that trades on [Polymarket](https://polymarket.com) **binary cr
 - **Strategies**: `trade_1` (time/price exit), `trade_2` (entry/exit ranges + optional emergency swap).
 - **Config**: TOML config (`trade.toml`) for strategy, market, trading range, thresholds, simulation.
 - **Simulation**: Optional `simulation = true` to skip sending orders.
+
+## Change the market(`trade.toml`)
+
+   You can change crypto market 
+   ** [market]
+      market_coin = "btc"  # btc / eth / sol / xrp
+      market_period = "5" # 5 / 15 / 60 / 240 / 1440 **
 
 ## Strategy logic (`decision.ts`)
 

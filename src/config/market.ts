@@ -8,14 +8,14 @@ export const COINS: Record<Coin, string> = {
   xrp: "XRP",
 };
 
-export const MINUTES_OPTIONS: Minutes[] = [15, 60, 240, 1440];
+export const MINUTES_OPTIONS: Minutes[] = [5, 15, 60, 240, 1440];
 
 export function validateConfig(config: MarketConfig): boolean {
   if (!["btc", "eth", "sol", "xrp"].includes(config.coin)) {
     throw new Error(`Invalid coin: ${config.coin}. Must be one of: btc, eth, sol, xrp`);
   }
-  if (![15, 60, 240, 1440].includes(config.minutes)) {
-    throw new Error(`Invalid minutes: ${config.minutes}. Must be one of: 15, 60, 240, 1440`);
+  if (![5, 15, 60, 240, 1440].includes(config.minutes)) {
+    throw new Error(`Invalid minutes: ${config.minutes}. Must be one of: 5, 15, 60, 240, 1440`);
   }
   return true;
 }

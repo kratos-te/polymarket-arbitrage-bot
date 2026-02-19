@@ -1,10 +1,10 @@
 strategy = "trade_2"
-trade_usd = 5
+trade_usd = 3
 max_retries = 3
 
 [market]
 market_coin = "btc"  # btc / eth / sol / xrp
-market_period = "60" # 15 / 60 / 240 / 1440
+market_period = "5" # 5 / 15 / 60 / 240 / 1440
 
 [trade_1]
 entry_price_range = [0.4, 0.6]
