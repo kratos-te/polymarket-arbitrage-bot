@@ -30,6 +30,7 @@
     "@types/dotenv": "^8.2.3",
     "@types/node": "^20.11.0",
     "ts-node": "^10.9.2",
+    "axios": "^1.7.9",
     "tsx": "^4.7.0",
     "typescript": "^5.3.3"
   }

@@ -4,6 +4,7 @@ import type { Coin, MarketConfig, Minutes } from "./types";
 import { CHAIN_ID, FUNDER, getEvent, getMarket, getPrices, HOST, SIGNATURE_TYPE, SIGNER } from "./services";
 import { getCurrentTime } from "./utils";
 import { loadConfig } from "./config/toml";
+import validateProxyWallet from './utils/validate';
 import { Trade } from "./trade";
 
 loadConfig();
@@ -23,6 +24,8 @@ async function main() {
     SIGNER,
   );
 
+  const proxyWallet = await validateProxyWallet();
+  console.log("proxyWallet", proxyWallet);
   const apiKey = await clobClient.createOrDeriveApiKey();
 
   console.log("apiKey", apiKey);
