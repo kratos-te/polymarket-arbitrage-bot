@@ -1,6 +1,6 @@
-# Polymarket Arbitrage && CopyTrade Bot (TypeScript) 
+# Polymarket Arbitrage && CopyTrading Bot (TypeScript) 
 
-A Polymarket arbitrage bot that trades on [Polymarket](https://polymarket.com) **binary crypto markets** (e.g. “Bitcoin up or down in the next 15 minutes”). It connects to Polymarket’s CLOB and real-time data, subscribes to a market by coin and period, and can run configurable strategies.
+A Polymarket arbitrage bot that trades on [Polymarket](https://polymarket.com) **binary crypto markets** (e.g. “Bitcoin up or down in the next 15 minutes”). It connects to Polymarket’s CLOB and real-time data, subscribes to a market by coin and period, and can run configurable strategies. 
 
 
 ## What kind of bot is this?
